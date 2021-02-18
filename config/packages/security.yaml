@@ -4,9 +4,7 @@ security:
             algorithm: auto
     providers:
         doctrine:
-            entity:
-                class: App\Entity\User
-                property: email
+            id: App\Security\Provider\UserProvider
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

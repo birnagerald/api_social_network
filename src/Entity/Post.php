@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class Post
@@ -38,6 +39,8 @@ class Post
      * @var string
      * @ORM\Column(type="text")
      * @Groups({"get"})
+     * @Assert\NotBlank
+     * @Assert\Length(min=10)
      */
     private string $content;
 
